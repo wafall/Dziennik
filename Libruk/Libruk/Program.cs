@@ -7,6 +7,7 @@ namespace Libruk
         static void Main(string[] args) 
         {
             Console.WriteLine("TSA");
+            Console.WriteLine("POKA");
         }
     }
-}
+}   
