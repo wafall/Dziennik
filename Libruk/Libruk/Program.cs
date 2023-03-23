@@ -4,9 +4,10 @@ namespace Libruk
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
-            Console.WriteLine("Hello World!");aaaa
+            Console.WriteLine("TSA");
+            Console.WriteLine("POKA");
         }
     }
-}
+}   
