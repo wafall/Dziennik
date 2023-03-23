@@ -8,7 +8,7 @@ namespace Libruk
         {
             Console.WriteLine("TSA");
             Console.WriteLine("POKA");
-                        Console.WriteLine("pilcik ma malego");
+                        Console.WriteLine("pilcik ma malego") ;
         }
     }
 }   
