@@ -1,0 +1,15 @@
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\bin\Debug\net6.0\Libruk.exe
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\bin\Debug\net6.0\Libruk.deps.json
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\bin\Debug\net6.0\Libruk.runtimeconfig.json
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\bin\Debug\net6.0\Libruk.dll
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\bin\Debug\net6.0\Libruk.pdb
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\Libruk.csproj.AssemblyReference.cache
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\Libruk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\Libruk.AssemblyInfoInputs.cache
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\Libruk.AssemblyInfo.cs
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\Libruk.csproj.CoreCompileInputs.cache
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\Libruk.dll
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\refint\Libruk.dll
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\Libruk.pdb
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\Libruk.genruntimeconfig.cache
+C:\Users\egzamin\Documents\GitHub\Dziennik\Libruk\Libruk\obj\Debug\net6.0\ref\Libruk.dll

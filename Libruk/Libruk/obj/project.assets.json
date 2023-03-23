@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\egzamin\\Documents\\PB 3H\\Libruk\\Libruk\\Libruk.csproj",
+      "projectUniqueName": "C:\\Users\\egzamin\\Documents\\GitHub\\Dziennik\\Libruk\\Libruk\\Libruk.csproj",
       "projectName": "Libruk",
-      "projectPath": "C:\\Users\\egzamin\\Documents\\PB 3H\\Libruk\\Libruk\\Libruk.csproj",
+      "projectPath": "C:\\Users\\egzamin\\Documents\\GitHub\\Dziennik\\Libruk\\Libruk\\Libruk.csproj",
       "packagesPath": "C:\\Users\\egzamin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\egzamin\\Documents\\PB 3H\\Libruk\\Libruk\\obj\\",
+      "outputPath": "C:\\Users\\egzamin\\Documents\\GitHub\\Dziennik\\Libruk\\Libruk\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
