@@ -8,7 +8,7 @@ namespace Libruk
         static void Main(string[] args)
         {
             // Połączenie z bazą danych
-            string polaczeniezbaza = "Data Source=(local);Initial Catalog=SchoolJournal;Integrated Security=True";
+            string polaczeniezbaza = "Data Source=(edziennik.sql);Initial Catalog=Libruk;Integrated Security=True";
             using (SqlConnection polaczenie = new SqlConnection(polaczeniezbaza))
             {
                 polaczenie.Open();
@@ -39,12 +39,12 @@ namespace Libruk
                                 // Wyświetlenie ocen
                                 Console.WriteLine("Wyświetlanie ocen:");
 
-                                SqlCommand command = new SqlCommand("SELECT * FROM Grades", polaczenie);
+                                SqlCommand command = new SqlCommand("SELECT * FROM oceny", polaczenie);
                                 SqlDataReader reader = command.ExecuteReader();
 
                                 while (reader.Read())
                                 {
-                                    Console.WriteLine($"{reader["Subject"]} - {reader["Grade"]}");
+                                    Console.WriteLine($"{reader["temat"]} - {reader["ocena"]}");
                                 }
 
                                 reader.Close();
@@ -58,7 +58,7 @@ namespace Libruk
                                 Console.WriteLine("Podaj ocenę:");
                                 int ocena = Convert.ToInt32(Console.ReadLine());
 
-                                command = new SqlCommand($"INSERT INTO Grades (Subject, Grade) VALUES ('{temat}', {ocena})", polaczenie);
+                                command = new SqlCommand($"INSERT INTO oceny (temat, ocena) VALUES ('{temat}', {ocena})", polaczenie);
                                 command.ExecuteNonQuery();
                                 Console.WriteLine("Dodano ocenę.");
                                 break;
@@ -71,7 +71,7 @@ namespace Libruk
                                 Console.WriteLine("Podaj nową ocenę:");
                                 int nowaOcena = Convert.ToInt32(Console.ReadLine());
 
-                                command = new SqlCommand($"UPDATE Grades SET Grade = {nowaOcena} WHERE Id = {ocenaID}", polaczenie);
+                                command = new SqlCommand($"UPDATE oceny SET ocena = {nowaOcena} WHERE Id = {ocenaID}", polaczenie);
                                 command.ExecuteNonQuery();
                                 Console.WriteLine("Zaktualizowano ocenę.");
                                 break;
@@ -82,7 +82,7 @@ namespace Libruk
                                 Console.WriteLine("Podaj ID oceny:");
                                 ocenaID = Convert.ToInt32(Console.ReadLine());
 
-                                command = new SqlCommand($"DELETE FROM Grades WHERE Id = {ocenaID}", polaczenie);
+                                command = new SqlCommand($"DELETE FROM oceny WHERE Id = {ocenaID}", polaczenie);
                                 command.ExecuteNonQuery();
                                 Console.WriteLine("Usunięto ocenę.");
                                 break;
