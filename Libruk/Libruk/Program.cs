@@ -1,10 +1,12 @@
-﻿using System;
+using System;
+using System.Data.SqlClient;
 
 namespace Libruk
 {
     internal class Program
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
+        {
             // Połączenie z bazą danych
             string connectionString = "Data Source=(local);Initial Catalog=SchoolJournal;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -90,6 +92,8 @@ namespace Libruk
                                 break;
                         }
                         break;
+                }
+            }
         }
     }
-}   
+}
