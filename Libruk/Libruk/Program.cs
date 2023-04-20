@@ -8,7 +8,7 @@ namespace Libruk
         static void Main(string[] args)
         {
             // Połączenie z bazą danych
-            string polaczeniezbaza = "Data Source=(edziennik.sql);Initial Catalog=Libruk;Integrated Security=True";
+            string polaczeniezbaza = "Data Source=312-05;Initial Catalog=Librusprogram; Integrated Security=True";
             using (SqlConnection polaczenie = new SqlConnection(polaczeniezbaza))
             {
                 polaczenie.Open();
