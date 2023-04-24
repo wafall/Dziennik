@@ -1,3 +1,4 @@
+using Libruk.Libruk;
 using System;
 using System.Data.SqlClient;
 
@@ -8,7 +9,7 @@ namespace Libruk
         static void Main(string[] args)
         {
             // Połączenie z bazą danych
-            string polaczeniezbaza = "Data Source=312-05;Initial Catalog=Librusprogram; Integrated Security=True";
+            string polaczeniezbaza = "Data Source=312-06;Initial Catalog=Librusprogram; Integrated Security=True";
             using (SqlConnection polaczenie = new SqlConnection(polaczeniezbaza))
             {
                 polaczenie.Open();
@@ -22,75 +23,88 @@ namespace Libruk
                 switch (panelwyboru)
                 {
                     case 1:
-                        // Panel nauczyciela
-                        Console.WriteLine("Panel nauczyciela");
+                        Nauczyciel nauczyciel = new Nauczyciel(polaczenie);
 
-                        // CRUD ocen
-                        Console.WriteLine("CRUD ocen:");
-                        Console.WriteLine("1. Wyświetl oceny");
-                        Console.WriteLine("2. Dodaj ocenę");
-                        Console.WriteLine("3. Edytuj ocenę");
-                        Console.WriteLine("4. Usuń ocenę");
-                        int CRUDocen = Convert.ToInt32(Console.ReadLine());
-
-                        switch (CRUDocen)
+                        // Pętla obsługująca menu
+                        bool wyjscie = false;
+                        while (!wyjscie)
                         {
-                            case 1:
-                                // Wyświetlenie ocen
-                                Console.WriteLine("Wyświetlanie ocen:");
+                            // Wyświetlenie menu
+                            Console.WriteLine("Menu:");
+                            Console.WriteLine("1. Wyświetl oceny");
+                            Console.WriteLine("2. Dodaj ocenę");
+                            Console.WriteLine("3. Edytuj ocenę");
+                            Console.WriteLine("4. Usuń ocenę");
+                            Console.WriteLine("5. Wyjście");
 
-                                SqlCommand command = new SqlCommand("SELECT * FROM oceny", polaczenie);
-                                SqlDataReader reader = command.ExecuteReader();
+                            Console.Write("Wybierz opcję: ");
+                            string opcja = Console.ReadLine();
 
-                                while (reader.Read())
-                                {
-                                    Console.WriteLine($"{reader["temat"]} - {reader["ocena"]}");
-                                }
+                            switch (opcja)
+                            {
+                                case "1":
+                                    nauczyciel.WyswietlOceny();
+                                    break;
+                                case "2":
+                                    nauczyciel.DodajOcene();
+                                    break;
+                                case "3":
+                                    nauczyciel.EdytujOcene();
+                                    break;
+                                case "4":
+                                    nauczyciel.UsunOcene();
+                                    break;
+                                case "5":
+                                    wyjscie = true;
+                                    break;
+                                default:
+                                    Console.WriteLine("Nieprawidłowa opcja.");
+                                    break;
+                            }
 
-                                reader.Close();
-                                break;
-
-                            case 2:
-                                // Dodanie oceny
-                                Console.WriteLine("Dodawanie oceny:");
-                                Console.WriteLine("Podaj przedmiot:");
-                                string temat = Console.ReadLine();
-                                Console.WriteLine("Podaj ocenę:");
-                                int ocena = Convert.ToInt32(Console.ReadLine());
-
-                                command = new SqlCommand($"INSERT INTO oceny (temat, ocena) VALUES ('{temat}', {ocena})", polaczenie);
-                                command.ExecuteNonQuery();
-                                Console.WriteLine("Dodano ocenę.");
-                                break;
-
-                            case 3:
-                                // Edycja oceny
-                                Console.WriteLine("Edytowanie oceny:");
-                                Console.WriteLine("Podaj ID oceny:");
-                                int ocenaID = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Podaj nową ocenę:");
-                                int nowaOcena = Convert.ToInt32(Console.ReadLine());
-
-                                command = new SqlCommand($"UPDATE oceny SET ocena = {nowaOcena} WHERE Id = {ocenaID}", polaczenie);
-                                command.ExecuteNonQuery();
-                                Console.WriteLine("Zaktualizowano ocenę.");
-                                break;
-
-                            case 4:
-                                // Usunięcie oceny
-                                Console.WriteLine("Usuwanie oceny:");
-                                Console.WriteLine("Podaj ID oceny:");
-                                ocenaID = Convert.ToInt32(Console.ReadLine());
-
-                                command = new SqlCommand($"DELETE FROM oceny WHERE Id = {ocenaID}", polaczenie);
-                                command.ExecuteNonQuery();
-                                Console.WriteLine("Usunięto ocenę.");
-                                break;
-
-                            default:
-                                Console.WriteLine("Nieprawidłowy wybór.");
-                                break;
+                            Console.WriteLine();
                         }
+
+                        // Zamknięcie połączenia z bazą danych
+                        polaczenie.Close();
+                        break;
+                    case 2:
+                        Uczen uczen = new Uczen(polaczenie);
+
+                        // Pętla obsługująca menu
+                        bool wyjscie2 = false;
+                        while (!wyjscie2)
+                        {
+                            // Wyświetlenie menu
+                            Console.WriteLine("Menu:");
+                            Console.WriteLine("1. Wyświetl oceny");
+                            Console.WriteLine("2. Wyświetl uwagi");
+                            Console.WriteLine("3. Wyjście");
+
+                            Console.Write("Wybierz opcję: ");
+                            string opcja = Console.ReadLine();
+
+                            switch (opcja)
+                            {
+                                case "1":
+                                    uczen.WyswietlOceny();
+                                    break;
+                                case "2":
+                                    uczen.WyswietlUwagi();
+                                    break;
+                                case "3":
+                                    wyjscie2 = true;
+                                    break;
+                                default:
+                                    Console.WriteLine("Nieprawidłowa opcja.");
+                                    break;
+                            }
+
+                            Console.WriteLine();
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Nieprawidłowa opcja.");
                         break;
                 }
             }
